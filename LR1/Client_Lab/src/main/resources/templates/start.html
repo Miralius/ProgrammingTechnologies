@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Сложение матриц</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Сложение матриц</h1>
+<form action="#" th:action="@{/save}" th:object="${matrixMapping}" method="post">
+    <p>Строки: <input type="number" th:field="*{rows}" /></p>
+    <p>Cтолбцы: <input type="number" th:field="*{columns}" /></p>
+    <p>Элементы: <input type="text" id="elements" th:field="*{elements}" /></p>
+    <p>Название файла: <input type="text" th:field="*{filename}" /></p>
+    <p><input type="submit" value="Отправить"/> <input type="reset" value="Сбросить"/></p>
+</form>
+<form action="#" th:action="@{/start}" th:object="${FileNames}" method="post">
+    <p>Путь к 1 матрице: <input type="text" th:field="*{file1}" /></p>
+    <p>Путь ко 2 матрице: <input type="text" th:field="*{file2}" /></p>
+    <p><input type="submit" value="Отправить" /> <input type="reset" value="Сбросить" /></p>
+</form>
+</body>
+</html>
