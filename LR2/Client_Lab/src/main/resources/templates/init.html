@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Фильтрация изображений</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Введите путь к файлам</h1>
+<form action="#" th:action="@{/ImageController/filterPicture}" th:object="${Form}" method="post">
+    <p>Исходный файл: <input type="text" th:field="*{file1}" /></p>
+    <p>Файл результата: <input type="text" th:field="*{file2}" /></p>
+    <p><input type="submit" value="Обработать" /> <input type="reset" value="Сбросить" /></p>
+</form>
+</body>
+</html>
