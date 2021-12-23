@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Логарифм</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</h:head>
+<h:body>
+
+    <h:panelGroup layout="block" styleClass="main">
+        <h:form>
+            <h1>Логарифм</h1>
+            <h:panelGroup layout="block" styleClass="block">
+                <p>Основание</p>
+                <h:inputText id="source"
+                             title="Введите основание"
+                             validatorMessage="Введите неотрицательное число!"
+                             value="#{task.source}"
+                             converter="javax.faces.Double"
+                             converterMessage="Введите число больше 0!"
+                             >
+                    <f:validateDoubleRange minimum="0"/>
+                </h:inputText>
+                <h:message for="source" errorClass="error"/>
+            </h:panelGroup>
+
+            <h:panelGroup layout="block" styleClass="block">
+                <p>Число</p>
+                <h:inputText id="number"
+                             title="число"
+                             value="#{task.number}"
+                             validatorMessage="Введите положительное число!"
+                             converter="javax.faces.Double"
+                             converterMessage="Введите число!">
+                </h:inputText>
+                <h:message for="number" errorClass="error"/>
+            </h:panelGroup>
+
+            <h:commandButton styleClass="button" action="${task.result}" value="Результат"/>
+        </h:form>
+    </h:panelGroup>
+</h:body>
+</html>
